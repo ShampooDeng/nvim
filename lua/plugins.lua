@@ -28,17 +28,15 @@ vim.opt.rtp:prepend(lazypath)
 if vim.g.vscode then
 	-- If running in VSCode extension
 	require("lazy").setup({
-		PLUGIN_PROXY .. "tpope/vim-surround",
-		PLUGIN_PROXY .. "tpope/vim-commentary",
-		-- plugin_proxy .. "gcmt/wildfire.vim",
+		-- not test on vscode yet!
+		require("plugins.improve_nvim"),
 		require("plugins.leap"),
 	})
 else
 	-- Running in ordinary Neovim
 	require("lazy").setup({
-		PLUGIN_PROXY .. "tpope/vim-surround",
-		PLUGIN_PROXY .. "tpope/vim-commentary",
-		PLUGIN_PROXY .. "gcmt/wildfire.vim",
+		require("plugins.improve_nvim"),
+		require("plugins.smartselection"),
 		require("plugins.leap"),
 		require("plugins.color_scheme"),
 		require("plugins.lualine"),
@@ -55,6 +53,5 @@ else
 		require("plugins.git").lazygit,
 		require("plugins.indent"),
 		require("plugins.fzf"),
-		require("plugins.hlsearch"),
 	})
 end
