@@ -8,28 +8,43 @@ local nmappings = {
 	{ from = ";",     to = ":" },
 	{ from = ">",     to = ">>" },
 	{ from = "<",     to = "<<" },
-	{ from = "J", to = "10j" },
-	{ from = "K", to = "10k" },
-	{ from = "<C-j>", to = "J", mode = mode_nv },
+	{ from = "q;",     to = "q:" },
+	-- { from = "J", to = "10j" },
+	-- { from = "K", to = "10k" },
+	-- { from = "<C-j>", to = "J", mode = mode_nv },
 }
 
 for _, mapping in ipairs(nmappings) do
 	vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, { noremap = true })
 end
 
--- -- Running current python file
--- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = "python",
--- 	callback = function()
--- 		-- print("entering python file")
--- 		vim.keymap.set({ 'n', 'i' }, '<F5>', function()
--- 			local file_path = vim.api.nvim_buf_get_name(0)
--- 			vim.cmd(":w")
--- 			return "<cmd>!time python " .. file_path .. "<CR>"
--- 		end, { expr = true })
--- 	end
--- })
--- 
+-- require(md-snippets)
+require("md-snippet")
+
+-- Running current python file
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		-- print("entering python file")
+		vim.keymap.set({ 'n', 'i' }, '<F5>', function()
+			local file_path = vim.api.nvim_buf_get_name(0)
+			vim.cmd(":w")
+			return "<cmd>!time python " .. file_path .. "<CR>"
+		end, { expr = true })
+	end
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "typst",
+	callback = function ()
+		-- Markdown keymap:
+		-- list
+		-- bold
+		-- italic
+		-- Auto complete next item of a list
+	end
+})
+
 -- local function match_dir_name(file_path)
 -- 	-- /home/shampoo/lua_missions/missions/missions.lua
 -- 	local pattern = "(/[^/]+/[^/]+/)([^/]+/[^/]+/)"
