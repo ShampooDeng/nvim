@@ -24,6 +24,7 @@ end
 
 local function config_lsp_server()
 	require("plugins.lsp.lua")
+	require("plugins.lsp.typst")
 end
 
 local function lsp_zero_config()
@@ -80,7 +81,7 @@ return {
 				pcall(vim.api.nvim_command, 'MasonUpdate')
 			end,
 		},
-		{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+		{ 'williamboman/mason-lspconfig.nvim'}, -- Optional
 		-- Autocompletion
 		{ 'hrsh7th/nvim-cmp' }, -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required

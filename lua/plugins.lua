@@ -53,5 +53,6 @@ else
 		require("plugins.git").lazygit,
 		require("plugins.indent"),
 		require("plugins.fzf"),
+		require("plugins.rust_tools"),
 	})
 end
