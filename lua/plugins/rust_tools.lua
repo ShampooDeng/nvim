@@ -9,6 +9,13 @@ return {
 	config = function ()
 		local rs = require('rust-tools')
 		rs.setup()
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "rust",
+			callback = function()
+				vim.keymap.set('n','<leader>b', '<cmd>RustLastRun<cr>')
+				vim.keymap.set('n','<leader>B', '<cmd>RustRunnables<cr>')
+			end
+		})
 	end
 }
 
