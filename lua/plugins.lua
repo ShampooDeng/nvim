@@ -48,7 +48,6 @@ else
 		require("plugins.lspconf"),
 		require("plugins.treesitter"),
 		require("plugins.tabout"), -- Tabout should be loaded after autocompletion.
-		require("plugins.tabline"),
 		require("plugins.git").gitsigns,
 		require("plugins.git").lazygit,
 		require("plugins.indent"),

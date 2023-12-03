@@ -1,5 +1,6 @@
 -- Make sure to set `mapleader` before lazy so your mappings are correct
-vim.g.mapleader = "\\"
+-- vim.g.mapleader = "\\"
+vim.g.mapleader = " "
 
 local mode_nv = { "n", "v" }
 local mode_v = { "v" }
