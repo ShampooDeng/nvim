@@ -55,5 +55,6 @@ else
 		require("plugins.fzf"),
 		require("plugins.rust_tools"),
 		require("plugins.telescope"),
+		require("plugins.rooter"),
 	})
 end
