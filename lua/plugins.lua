@@ -54,5 +54,6 @@ else
 		require("plugins.indent"),
 		require("plugins.fzf"),
 		require("plugins.rust_tools"),
+		require("plugins.telescope"),
 	})
 end
