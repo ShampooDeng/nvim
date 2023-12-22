@@ -20,7 +20,6 @@ for _, mapping in ipairs(nmappings) do
 end
 
 -- require(md-snippets)
-require("md-snippet")
 
 -- Running current python file
 vim.api.nvim_create_autocmd("FileType", {

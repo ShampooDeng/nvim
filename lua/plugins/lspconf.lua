@@ -24,7 +24,6 @@ end
 
 local function config_lsp_server()
 	require("plugins.lsp.lua")
-	require("plugins.lsp.typst")
 end
 
 local function lsp_zero_config()
