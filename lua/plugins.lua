@@ -38,7 +38,7 @@ else
 		require("plugins.improve_nvim"),
 		require("plugins.smartselection"),
 		require("plugins.leap"),
-		require("plugins.color_scheme"),
+		require("plugins.color_scheme").gruvbox,
 		require("plugins.statusline"),
 		require("plugins.tabline"),
 		require("plugins.joshuto"),
