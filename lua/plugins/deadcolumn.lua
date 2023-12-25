@@ -24,7 +24,7 @@ return {
 		vim.opt.colorcolumn = {80}
 		colorcolumn_per_filetype()
 		require("deadcolumn").setup({
-			scope = "visible"
+			scope = "line"
 		})
 	end
 }
