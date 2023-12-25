@@ -12,6 +12,7 @@ M.everforest = {
 		vim.opt.background = "dark"
 		vim.g.everforest_background = "medium"
 		vim.g.everforest_better_performance = 1
+		vim.cmd [[colorscheme everforest]]
 	end,
 }
 
@@ -20,7 +21,7 @@ M.gruvbox_baby = {
 	branch = "main",
 	lazy = false,
 	priority = 1000,
-	config = function ()
+	config = function()
 		vim.g.gruvbox_baby_background_color = "medium"
 		-- Each highlight group must follow the structure:
 		-- ColorGroup = {fg = "foreground color", bg = "background_color", style = "some_style(:h attr-list)"}
@@ -35,7 +36,7 @@ M.gruvbox_baby = {
 		vim.g.gruvbox_baby_transparent_mode = 0
 
 		-- Load the colorscheme
-		vim.cmd[[colorscheme gruvbox-baby]]
+		vim.cmd [[colorscheme gruvbox-baby]]
 	end
 }
 
@@ -43,16 +44,20 @@ M.gruvbox = {
 	"ellisonleao/gruvbox.nvim",
 	priority = 1000,
 	config = function ()
+		require("gruvbox").setup({
+			--set your config here.
+			overrides = {}
+		})
 		vim.o.background = "dark"
-		vim.cmd[[colorscheme gruvbox]]
+		vim.cmd.colorscheme("gruvbox")
 	end
 }
 
 M.evaglion = {
 	"nyngwang/nvimgelion",
 	priority = 1000,
-	config = function ()
-		vim.cmd[[colorscheme nvimgelion]]
+	config = function()
+		vim.cmd [[colorscheme nvimgelion]]
 	end
 }
 
