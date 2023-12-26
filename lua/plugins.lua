@@ -42,7 +42,6 @@ else
 		require("plugins.statusline"),
 		require("plugins.tabline"),
 		require("plugins.joshuto"),
-		-- require("plugins.snippet"),
 		require("plugins.autopairs"),
 		require("plugins.autocompletion").install,
 		require("plugins.lspconf"),
@@ -55,5 +54,6 @@ else
 		require("plugins.rust_tools"),
 		require("plugins.telescope"),
 		require("plugins.rooter"),
+		require("plugins.deadcolumn"),
 	})
 end

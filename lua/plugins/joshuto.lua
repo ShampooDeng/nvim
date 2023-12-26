@@ -1,9 +1,11 @@
 return {
 	PLUGIN_PROXY .. "theniceboy/joshuto.nvim",
 	keys = {
-		{"gj"},
+		{"<leader>j"},
 	},
 	config = function()
-		vim.keymap.set("n", "gj", "<cmd>Joshuto<cr>", {silent = true})
+		vim.keymap.set(
+			"n", "<leader>j", "<cmd>Joshuto<cr>", {silent = true}
+		)
 	end
 }
