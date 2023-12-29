@@ -1,6 +1,6 @@
 local linewidth_configs = {
 	-- filetype, width
-	{'pyton', 79},
+	{'python', 79},
 }
 
 local function setup_colorcolumn_per_filetype(type, width)
