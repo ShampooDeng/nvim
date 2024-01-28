@@ -7,6 +7,12 @@ return {
 			require("bufferline").setup{
 				options = {
 					-- TODO
+					diagnostics = "nvim_lsp",
+					-- check help for more infomation
+					diagnostics_indicator = function(count, level, diagnostics_dict, context)
+						local icon = level:match("error") and " " or " "
+						return " " .. icon .. count
+					end
 				},
 				vim.keymap.set("n","gn",":BufferLineCycleNext<CR>",{silent = true}),
 				vim.keymap.set("n","gp",":BufferLineCyclePrev<CR>",{silent = true}),
