@@ -21,11 +21,11 @@ end
 
 -- require(md-snippets)
 
+-- >>> Python >>>
 -- Running current python file
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "python",
 	callback = function()
-		-- print("entering python file")
 		vim.keymap.set({ 'n', 'i' }, '<F5>', function()
 			local file_path = vim.api.nvim_buf_get_name(0)
 			vim.cmd(":w")
