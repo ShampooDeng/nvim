@@ -28,8 +28,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.keymap.set({ 'n', 'i' }, '<F5>', function()
 			local file_path = vim.api.nvim_buf_get_name(0)
-			vim.cmd(":w")
-			return "<cmd>!time python " .. file_path .. "<CR>"
+			-- vim.cmd(":w")
+			-- return "<cmd>!time python " .. file_path .. "<CR>"
+			local cmd_name = [["python "]]..file_path..[[""]]
+			local cmd = [["python ]]..file_path..[["]]
+			return string.format("<cmd>TermExec cmd=%s name=%s<CR>", cmd, cmd_name)
 		end, { expr = true })
 	end
 })
