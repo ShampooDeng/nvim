@@ -5,7 +5,9 @@ return {
 	},
 	config = function()
 		vim.keymap.set(
-			"n", "<leader>j", "<cmd>Joshuto<cr>", {silent = true}
+			"n", "<leader>j", function ()
+				vim.cmd([[lua require('joshuto').joshuto({edit_in_tab = true})]])
+			end, {silent = true}
 		)
 	end
 }

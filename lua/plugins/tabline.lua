@@ -6,6 +6,7 @@ return {
 			vim.opt.termguicolors = true
 			require("bufferline").setup{
 				options = {
+					mode = "tabs",
 					-- TODO
 					diagnostics = "nvim_lsp",
 					-- check help for more infomation
@@ -14,6 +15,8 @@ return {
 						return " " .. icon .. count
 					end
 				},
+				-- Jump betweene buffers can use <C-i>,<C-o>
+				-- Check `help jumplist` for more details.
 				vim.keymap.set("n","gn",":BufferLineCycleNext<CR>",{silent = true}),
 				vim.keymap.set("n","gp",":BufferLineCyclePrev<CR>",{silent = true}),
 			}
