@@ -80,12 +80,12 @@ return {
 				pcall(vim.api.nvim_command, 'MasonUpdate')
 			end,
 		},
-		{ 'williamboman/mason-lspconfig.nvim'}, -- Optional
+		{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 		-- Autocompletion
-		{ 'hrsh7th/nvim-cmp' }, -- Required
+		{ 'hrsh7th/nvim-cmp' },   -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-		{ 'L3MON4D3/LuaSnip' }, -- Required
-		{ "folke/neodev.nvim",    config = config_neodev }
+		{ 'L3MON4D3/LuaSnip' },   -- Required
+		{ "folke/neodev.nvim",                config = config_neodev },
 	},
 	config = lsp_zero_config
 }

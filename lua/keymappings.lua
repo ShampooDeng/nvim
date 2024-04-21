@@ -6,10 +6,10 @@ local mode_nv = { "n", "v" }
 local mode_v = { "v" }
 local mode_i = { "i" }
 local nmappings = {
-	{ from = ";",     to = ":" },
-	{ from = ">",     to = ">>" },
-	{ from = "<",     to = "<<" },
-	{ from = "q;",     to = "q:" },
+	{ from = ";",  to = ":" },
+	{ from = ">",  to = ">>" },
+	{ from = "<",  to = "<<" },
+	{ from = "q;", to = "q:" },
 	-- { from = "J", to = "10j" },
 	-- { from = "K", to = "10k" },
 	-- { from = "<C-j>", to = "J", mode = mode_nv },
@@ -30,8 +30,8 @@ vim.api.nvim_create_autocmd("FileType", {
 			local file_path = vim.api.nvim_buf_get_name(0)
 			-- vim.cmd(":w")
 			-- return "<cmd>!time python " .. file_path .. "<CR>"
-			local cmd_name = [["python "]]..file_path..[[""]]
-			local cmd = [["python ]]..file_path..[["]]
+			local cmd_name = [["python "]] .. file_path .. [[""]]
+			local cmd = [["python ]] .. file_path .. [["]]
 			return string.format("<cmd>TermExec cmd=%s name=%s<CR>", cmd, cmd_name)
 		end, { expr = true })
 	end
@@ -39,7 +39,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "typst",
-	callback = function ()
+	callback = function()
 		-- Markdown keymap:
 		-- list
 		-- bold
@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- 	end
 -- 	return file_path
 -- end
--- 
+--
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = "lua",
 -- 	callback = function()
