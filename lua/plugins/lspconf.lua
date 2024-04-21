@@ -9,7 +9,7 @@ local function config_lsp_keybinding()
 			vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 			vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-			vim.keymap.set({ 'n', 'i' }, "<C-'>", '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+			vim.keymap.set({ 'n', 'i' }, "<M-'>", '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 			-- vim.keymap.set({'n','i'}, 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 			vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 			vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
@@ -83,6 +83,12 @@ local function config_mason()
 	})
 end
 
+local function config_mason_lspcfg()
+	require("mason-lspconfig").setup({
+		ensure_installed = {}
+	})
+end
+
 return {
 	PLUGIN_PROXY .. "VonHeikemen/lsp-zero.nvim",
 	branch = 'v2.x',
@@ -96,12 +102,15 @@ return {
 			end,
 			config = config_mason,
 		},
-		{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+		{
+			'williamboman/mason-lspconfig.nvim',
+			config = config_mason_lspcfg,
+		},            -- Optional
 		-- Autocompletion
-		{ 'hrsh7th/nvim-cmp' },   -- Required
+		{ 'hrsh7th/nvim-cmp' }, -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-		{ 'L3MON4D3/LuaSnip' },   -- Required
-		{ "folke/neodev.nvim",                config = config_neodev },
+		{ 'L3MON4D3/LuaSnip' }, -- Required
+		{ "folke/neodev.nvim",    config = config_neodev },
 	},
 	config = lsp_zero_config
 }

@@ -1,7 +1,7 @@
 return {
 	PLUGIN_PROXY .. "ggandor/leap.nvim",
 	dependencies = "VonHeikemen/lsp-zero.nvim",
-	keys = {"s",'s',"x",'X'},
+	keys = {"s",'S',"x",'X'},
 	config = function()
 		require("leap").add_default_mappings()
 
