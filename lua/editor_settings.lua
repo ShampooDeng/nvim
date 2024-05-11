@@ -25,8 +25,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local nvim_version = vim.version()
 		if client ~= nil and client.server_capabilities.inlayHintProvider and nvim_version.minor >= 10 then
 			vim.keymap.set(
-				{ "n", "i" },
-				"<C-k>",
+				{ "n" },
+				"<leader>k",
 				"<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>"
 			)
 			vim.api.nvim_cmd({
