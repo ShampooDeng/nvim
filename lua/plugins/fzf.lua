@@ -17,10 +17,11 @@ return {
 		-- end)
 		-- vim.keymap.set("n", "<c-p>", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
 		vim.keymap.set("n", "<c-f>", "<cmd>lua require('fzf-lua').grep_visual()<CR>", { silent = true })
+		vim.keymap.set("n", "<m-f>", "<cmd>lua require('fzf-lua').grep_curbuf()<CR>", { silent = true })
 		-- vim.keymap.set("n", "<c-l>", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
 		vim.keymap.set("v", "<c-f>", "<cmd>lua require('fzf-lua').grep_cword()<CR>", { silent = true })
+		vim.keymap.set("v", "<m-f>", "<cmd>lua require('fzf-lua').grep_cword()<CR>", { silent = true })
 		-- vim.keymap.set({"n","v","x"}, ":", "<cmd>lua require('fzf-lua').commands()<CR>", { silent = true })
 		vim.keymap.set("n", "<c-b>", "<cmd>lua require('fzf-lua').builtin()<CR>", { silent = true })
-		-- TOOD: forbid fzf from readingm pasteboard.
 	end
 }
