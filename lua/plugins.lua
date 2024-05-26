@@ -55,7 +55,7 @@ else
 		require("plugins.telescope"),
 		require("plugins.rooter"),
 		require("plugins.deadcolumn"),
-		require("plugins.im_switch"),
+		-- require("plugins.im_switch"),
 		require("plugins.terminal"),
 	})
 end
