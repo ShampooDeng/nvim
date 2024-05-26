@@ -43,9 +43,10 @@ M.gruvbox_baby = {
 M.gruvbox = {
 	"ellisonleao/gruvbox.nvim",
 	priority = 1000,
-	config = function ()
+	config = function()
 		require("gruvbox").setup({
 			--set your config here.
+			transparent_mode = true,
 			overrides = {}
 		})
 		vim.o.background = "dark"
