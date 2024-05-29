@@ -24,12 +24,14 @@ return {
 
 		vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 		vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
-		vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
+		vim.keymap.set('n', '<leader>fw', builtin.grep_string, {})
 		vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 		vim.keymap.set('n', '<leader>fh', my_help_tag, {})
 		vim.keymap.set('n', ':', builtin.commands, {})
 		vim.keymap.set('n', '<leader>h', builtin.command_history, {})
 		vim.keymap.set('n', '<C-p>', builtin.builtin, {})
+		vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
+		vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols, {})
 	require('telescope').setup{
 		defaults = {
 			mappings = {
