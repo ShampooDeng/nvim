@@ -55,6 +55,7 @@ return {
 			-- refer to the configuration section below
 		},
 		config = function()
+			require("todo-comments").setup()
 			vim.keymap.set("n", "]t", function()
 			  require("todo-comments").jump_next()
 			end, { desc = "Next todo comment" })
