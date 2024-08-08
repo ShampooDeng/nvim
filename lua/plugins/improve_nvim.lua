@@ -40,6 +40,8 @@ return {
 	{
 		"petertriho/nvim-scrollbar",
 		lazy = false,
+		-- Disable scrollbar in vscode
+		cond = not vim.g.vscode,
 		denpendencies = { "lewis6991/gitsigns.nvim" },
 		config = function()
 			require("scrollbar").setup()
