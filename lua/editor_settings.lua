@@ -12,7 +12,6 @@ opt.tabstop = 8
 opt.ignorecase = true
 opt.smartcase = true
 -- Others
--- TODO: Shared clipboard through nvim instances.
 opt.clipboard:append({ "unnamedplus" })
 opt.ttimeoutlen = 100
 

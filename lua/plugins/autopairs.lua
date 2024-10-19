@@ -27,10 +27,10 @@ return {
 		})
 
 		npairs.add_rules({
-		    Rule("<", ">", "rust")
-		      :with_pair(Cond.not_before_text(' '))
-		      :with_pair(Cond.before_regex('.*'))
-		      :with_move(Cond.after_text('>'))
+			Rule("<", ">", "rust")
+			    :with_pair(Cond.not_before_text(' '))
+			    :with_pair(Cond.before_regex('.*'))
+			    :with_move(Cond.after_text('>'))
 		})
 	end
 }

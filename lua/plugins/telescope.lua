@@ -1,11 +1,12 @@
 return {
-	'nvim-telescope/telescope.nvim', tag = '0.1.4',
--- or                              , branch = '0.1.x',
+	'nvim-telescope/telescope.nvim',
+	tag = '0.1.4',
+	-- or                              , branch = '0.1.x',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		'nvim-tree/nvim-web-devicons'
 	},
-	config = function ()
+	config = function()
 		local builtin = require('telescope.builtin')
 		local actions = require('telescope.actions')
 
@@ -13,9 +14,9 @@ return {
 			builtin.help_tags({
 				-- More details can be found in telescope's wiki
 				-- https://github.com/nvim-telescope/telescope.nvim/blob/master/developers.md#replacing-actions
-				attach_mappings = function (prompt_bufnr, _)
-					actions.select_default:replace(function ()
-						actions.select_vertical({prompt_bufnr})
+				attach_mappings = function(prompt_bufnr, _)
+					actions.select_default:replace(function()
+						actions.select_vertical({ prompt_bufnr })
 					end)
 					return true
 				end
@@ -32,14 +33,15 @@ return {
 		vim.keymap.set('n', '<C-p>', builtin.builtin, {})
 		vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
 		vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols, {})
-	require('telescope').setup{
-		defaults = {
-			mappings = {
-				i = {
-					-- ["q"] = require("telescope.actions").close,
-				},
+
+		require('telescope').setup {
+			defaults = {
+				mappings = {
+					i = {
+						-- ["q"] = require("telescope.actions").close,
+					},
+				}
 			}
 		}
-	}
 	end
 }

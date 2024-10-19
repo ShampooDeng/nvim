@@ -1,13 +1,13 @@
 local linewidth_configs = {
 	-- filetype, width
-	{'python', 79},
+	{ 'python', 79 },
 }
 
 local function setup_colorcolumn_per_filetype(type, width)
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = type,
-		callback = function ()
-			vim.opt_local.colorcolumn = {width}
+		callback = function()
+			vim.opt_local.colorcolumn = { width }
 		end
 	})
 end
@@ -20,8 +20,8 @@ end
 
 return {
 	'Bekaboo/deadcolumn.nvim',
-	config = function ()
-		vim.opt.colorcolumn = {80}
+	config = function()
+		vim.opt.colorcolumn = { 80 }
 		colorcolumn_per_filetype()
 		require("deadcolumn").setup({
 			scope = "line"

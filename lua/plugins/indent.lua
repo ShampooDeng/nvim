@@ -1,6 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	config = function ()
+	config = function()
 		-- vim.opt.termguicolors = true
 
 		-- vim.opt.list = true
@@ -11,12 +11,12 @@ return {
 		-- 	show_current_context_start = true,
 		-- 	context_char = '┃'
 		-- }
-		local highlight = {"Green"}
+		local highlight = { "Green" }
 		local hooks = require "ibl.hooks"
-		hooks.register(hooks.type.HIGHLIGHT_SETUP, function ()
-			vim.api.nvim_set_hl(0, "Green", {fg = "#98C379"})
+		hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+			vim.api.nvim_set_hl(0, "Green", { fg = "#98C379" })
 		end)
-		require("ibl").setup{
+		require("ibl").setup {
 			scope = {
 				enabled = true,
 				-- char = "┃",

@@ -21,7 +21,7 @@ local M = {
 }
 
 local function set_term_keymap()
-	local opts = {buffer = 0}
+	local opts = { buffer = 0 }
 	vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
 	vim.keymap.set('t', '<C-w>h', [[<Cmd>wincmd h<CR>]], opts)
 	vim.keymap.set('t', '<C-w>j', [[<Cmd>wincmd j<CR>]], opts)
@@ -42,7 +42,7 @@ local function set_size(term)
 	end
 end
 
-M[1].config = function ()
+M[1].config = function()
 	require("toggleterm").setup({
 		size = set_size,
 		open_mapping = [[<C-\>]],
