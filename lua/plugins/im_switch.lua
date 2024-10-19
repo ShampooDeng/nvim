@@ -3,6 +3,9 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	event = "VeryLazy",
 	opts = {
+		set_default_im_events = {
+			"VimEnter", "InsertLeave", "CmdlineLeave"
+		},
 		windows = {
 			enabled = true,
 		},

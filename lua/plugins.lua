@@ -41,7 +41,7 @@ else
 		require("plugins.color_scheme").gruvbox,
 		require("plugins.statusline"),
 		require("plugins.tabline"),
-		require("plugins.joshuto"),
+		-- require("plugins.joshuto"),
 		require("plugins.autopairs"),
 		require("plugins.autocompletion").install,
 		require("plugins.lspconf"),
