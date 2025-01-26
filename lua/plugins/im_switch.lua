@@ -11,9 +11,12 @@ return {
 		},
 		linux = {
 			enabled = true,
-			default_im = "xkb:us::eng",
-			obtain_im_command = { "ibus", "engine" },
-			set_im_command = { "ibus", "engine" },
+			-- default_im = "xkb:us::eng",
+			-- obtain_im_command = { "ibus", "engine" },
+			-- set_im_command = { "ibus", "engine" },
+			default_im = "keyboard-us",
+			obtain_im_command = { "fcitx5-remote", "-n" },
+			set_im_command = { "fcitx5-remote", "-s" },
 		},
 	}
 	-- "Kicamon/im-switch.nvim",
