@@ -10,6 +10,8 @@ git_plugins.gitsigns = {
 					'<cmd>lua require"gitsigns".prev_hunk()<CR>', {})
 				vim.api.nvim_buf_set_keymap(bufnr, "n", "]g",
 					'<cmd>lua require"gitsigns".next_hunk()<CR>', {})
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "<c-.>",
+					'<cmd>lua require"gitsigns".preview_hunk()<CR>', {})
 			end
 		}
 	end
