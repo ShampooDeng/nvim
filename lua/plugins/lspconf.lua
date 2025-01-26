@@ -22,38 +22,8 @@ local function config_lsp_keybinding()
 	})
 end
 
-local function config_lsp_server()
-	require("plugins.lsp.lua")
-end
-
-local function lsp_zero_config()
-	-- Config lsp_zero_config
-	local lsp = require('lsp-zero').preset({
-		manage_nvim_cmp = {
-			-- Add extra mappings for going to snippet place holder
-			-- and disable <Tab>&<S-Tab> introduced by extra mappings
-			-- in Autocompletion.lua
-			set_extra_mappings = true,
-		}
-	})
-
-	-- lsp.on_attach(function(client, bufnr)
-	-- 	-- see :help lsp-zero-keybinding to learn the available actions
-	-- 	lsp.default_keymaps({ buffer = bufnr })
-	-- end)
-
-	-- (Optional) Configure lua language server for neovim
-	-- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-	config_lsp_server()
-	lsp.setup()
-
-	-- Override settings of nvim-cmp configed by lsp-zero
-	require("plugins.autocompletion").config()
-
-	-- Lsp keybindings:
-	config_lsp_keybinding()
-	-- Note: More keybindings related to lsp can be found in
-	-- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/lsp.md
+local function load_lsp_config()
+	require("plugins.lsp")
 end
 
 local function config_neodev()
@@ -85,8 +55,39 @@ end
 
 local function config_mason_lspcfg()
 	require("mason-lspconfig").setup({
-		ensure_installed = {}
+		automatic_installation = {},
+		ensure_installed = {"lua_ls"},
 	})
+end
+
+local function config()
+	-- Config lsp_zero_config
+	local lsp = require('lsp-zero').preset({
+		manage_nvim_cmp = {
+			-- Add extra mappings for going to snippet place holder
+			-- and disable <Tab>&<S-Tab> introduced by extra mappings
+			-- in Autocompletion.lua
+			set_extra_mappings = true,
+		}
+	})
+
+	-- lsp.on_attach(function(client, bufnr)
+	-- 	-- see :help lsp-zero-keybinding to learn the available actions
+	-- 	lsp.default_keymaps({ buffer = bufnr })
+	-- end)
+
+	-- (Optional) Configure lua language server for neovim
+	-- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+	load_lsp_config()
+	lsp.setup()
+
+	-- Override settings of nvim-cmp configed by lsp-zero
+	require("plugins.autocompletion").config()
+
+	-- Lsp keybindings:
+	config_lsp_keybinding()
+	-- Note: More keybindings related to lsp can be found in
+	-- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/lsp.md
 end
 
 return {
@@ -112,5 +113,5 @@ return {
 		{ 'L3MON4D3/LuaSnip' }, -- Required
 		{ "folke/neodev.nvim",    config = config_neodev },
 	},
-	config = lsp_zero_config
+	config = config
 }
