@@ -58,6 +58,7 @@ else
 		require("plugins.im_switch"),
 		require("plugins.terminal"),
 		require("plugins.markdown_utils"),
+		require("plugins.multi_cursor"),
 	})
 end
 
