@@ -23,9 +23,8 @@ git_plugins.lazygit = {
 		{ "<Leader>g" }
 	},
 	config = function()
-		vim.keymap.set("n", "<Leader>g", "<cmd>LazyGit<CR>", { silent = true })
+		vim.keymap.set("n", "<Leader>lg", "<cmd>LazyGit<CR>", { silent = true })
 	end
 }
 
--- TODO:Add gather all plugins related to git
 return git_plugins

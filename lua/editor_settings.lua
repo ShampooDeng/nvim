@@ -6,8 +6,8 @@ opt.relativenumber = true
 -- Tabs behavior
 opt.smartindent = true
 opt.autoindent = true
-opt.shiftwidth = 8
-opt.tabstop = 8
+opt.shiftwidth = 4
+opt.tabstop = 4
 -- Search pattern
 opt.ignorecase = true
 opt.smartcase = true
