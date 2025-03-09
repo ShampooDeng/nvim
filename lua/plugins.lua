@@ -59,6 +59,7 @@ else
 		require("plugins.terminal"),
 		require("plugins.markdown_utils"),
 		require("plugins.multi_cursor"),
+		require("plugins.copilot"),
 	})
 end
 
