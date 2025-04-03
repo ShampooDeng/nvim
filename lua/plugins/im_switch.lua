@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	event = "VeryLazy",
 	opts = {
-		set_default_im_events = {
+		default_im_events = {
 			"VimEnter", "InsertLeave", "CmdlineLeave"
 		},
 		windows = {
@@ -15,7 +15,7 @@ return {
 			-- obtain_im_command = { "ibus", "engine" },
 			-- set_im_command = { "ibus", "engine" },
 			default_im = "keyboard-us",
-			obtain_im_command = { "fcitx5-remote", "-n" },
+			get_im_command = { "fcitx5-remote", "-n" },
 			set_im_command = { "fcitx5-remote", "-s" },
 		},
 	}
