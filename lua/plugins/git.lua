@@ -20,7 +20,7 @@ git_plugins.gitsigns = {
 git_plugins.lazygit = {
 	"kdheepak/lazygit.nvim",
 	keys = {
-		{ "<Leader>g" }
+		{ "<Leader>lg" }
 	},
 	config = function()
 		vim.keymap.set("n", "<Leader>lg", "<cmd>LazyGit<CR>", { silent = true })
