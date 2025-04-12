@@ -15,6 +15,21 @@ opt.smartcase = true
 opt.clipboard:append({ "unnamedplus" })
 opt.ttimeoutlen = 100
 
+-- A new diagnostic feature in 0.11.0
+vim.diagnostic.config({
+  -- Use the default configuration
+  virtual_lines = true
+
+  -- Alternatively, customize specific options
+  -- virtual_lines = {
+  --  -- Only show virtual line diagnostics for the current cursor line
+  --  current_line = true,
+  -- },
+})
+-- Older one in neovim 0.10.0
+-- vim.diagnostic.config({
+--   virtual_text = { current_line = true }
+-- })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
