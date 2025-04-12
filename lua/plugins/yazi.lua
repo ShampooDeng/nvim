@@ -116,7 +116,7 @@ function win:new_float(float_opt, enter, force)
 	self.bufnr = float_opt.bufnr or api.nvim_create_buf(false, false)
 	float_opt.bufnr = nil
 	float_opt = force and make_floating_popup_options(float_opt)
-	    or vim.tbl_extend('force', default(), float_opt)
+		or vim.tbl_extend('force', default(), float_opt)
 	self.winid = api.nvim_open_win(self.bufnr, enter, float_opt)
 	return self
 end
@@ -187,12 +187,6 @@ local function yazi(open, opt)
 		col = 'c',
 	}
 
-	-- BUG: E5108: Error executing lua: /home/shampoo/.config/nvim/lua/plugins/yazi.lua:234: Vim:Err or executing Lua callback: /home/shampoo/.config/nvim/lua/plugins/yazi.lua:195: cannot u se both 'scope' and 'buf'
-	-- if infos.bufnr then
-	--   float_opt.bufnr = infos.bufnr
-	--   api.nvim_set_option_value('modified', false, { scope = "local", buf=infos.bufnr })
-	-- end
-
 	infos.bufnr, infos.winid = win:new_float(float_opt, true, true):wininfo()
 
 	vim.fn.termopen(string.format('yazi %s --chooser-file="%s"', infos.filename, infos.tempname), {
@@ -231,8 +225,9 @@ local function setup()
 	vim.keymap.set('n', '<leader>j', function()
 		vim.cmd.Yazi { 'tabe' }
 	end, {})
-	-- TODO: set keybinding only in the scope of the yazi term window.
-	-- For open files in split windows, etc.
+	vim.keymap.set('n', '<leader>sl', function()
+		vim.cmd.Yazi { 'left' }
+	end, {})
 end
 
 return { setup = setup }
