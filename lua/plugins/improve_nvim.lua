@@ -10,9 +10,6 @@ return {
 	{
 		'echasnovski/mini.comment',
 		version = false,
-		config = function()
-			require("mini.comment").setup()
-		end
 	},
 	{
 		'echasnovski/mini.jump',
@@ -32,10 +29,6 @@ return {
 	{
 		"nvimdev/hlsearch.nvim",
 		event = "BufRead",
-		config = function()
-			require("hlsearch").setup()
-		end
-
 	},
 	{
 		"petertriho/nvim-scrollbar",
@@ -51,29 +44,19 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{ "]t",         "<cmd>lua require('todo-comments').jump_next()<cr>", desc = "Next todo comment" },
+			{ "[t",         "<cmd>lua require('todo-comments').jump_prev()<cr>", desc = "Previous todo comment" },
+			{ "<leader>ft", "<cmd>TodoTelescope<cr>",                            desc = "Find todo comments" },
+			-- -- You can also specify a list of valid jump keywords
+			-- vim.keymap.set("n", "]t", function()
+			--   require("todo-comments").jump_next({keywords = { "ERROR", "WARNING" }})
+			-- end, { desc = "Next error/warning todo comment" })
+		},
 		opts = {
 			-- your configuration comes herpe
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
 		},
-		config = function()
-			require("todo-comments").setup()
-			vim.keymap.set("n", "]t", function()
-				require("todo-comments").jump_next()
-			end, { desc = "Next todo comment" })
-
-			vim.keymap.set("n", "[t", function()
-				require("todo-comments").jump_prev()
-			end, { desc = "Previous todo comment" })
-
-			vim.keymap.set("n", "<leader>ft", function()
-				vim.cmd("TodoTelescope")
-			end, { desc = "Previous todo comment" })
-
-			-- -- You can also specify a list of valid jump keywords
-			-- vim.keymap.set("n", "]t", function()
-			--   require("todo-comments").jump_next({keywords = { "ERROR", "WARNING" }})
-			-- end, { desc = "Next error/warning todo comment" })
-		end
-	},
+	}
 }

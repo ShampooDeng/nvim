@@ -7,8 +7,8 @@ return {
 		"nvim-tree/nvim-web-devicons", -- optional, but recommended
 	},
 	keys = {
-		{"<leader>e", "<cmd>Neotree<cr>", desc = "NeoTree"},
-		{"<leader>tt", "<cmd>Neotree toggle<cr>", desc = "<T>oggle Neo<T>ree"}
+		{ "<leader>e",  "<cmd>Neotree<cr>",        desc = "NeoTree" },
+		{ "<leader>tt", "<cmd>Neotree toggle<cr>", desc = "<T>oggle Neo<T>ree" }
 	},
 	lazy = false, -- neo-tree will lazily load itself
 	---@module 'neo-tree'

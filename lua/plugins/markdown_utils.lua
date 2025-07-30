@@ -27,7 +27,7 @@ return {
 	},
 	{
 		'antonk52/markdowny.nvim',
-		config = function ()
+		config = function()
 			require('markdowny').setup()
 			-- Default keymap
 			-- vim.keymap.set('v', '<C-b>', ":lua require('markdowny').bold()<cr>", { buffer = 0 })
