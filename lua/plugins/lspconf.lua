@@ -58,7 +58,7 @@ end
 local function config_mason_lspcfg()
 	require("mason-lspconfig").setup({
 		automatic_installation = {},
-		ensure_installed = {"lua_ls"},
+		ensure_installed = { "lua_ls" },
 	})
 end
 
@@ -98,7 +98,7 @@ return {
 	dependencies = {
 		-- LSP Support
 		{ 'neovim/nvim-lspconfig' }, -- Required
-		{              -- Optional
+		{                      -- Optional
 			'williamboman/mason.nvim',
 			build = function()
 				pcall(vim.api.nvim_command, 'MasonUpdate')
@@ -108,7 +108,7 @@ return {
 		{
 			'williamboman/mason-lspconfig.nvim',
 			config = config_mason_lspcfg,
-		},            -- Optional
+		},                    -- Optional
 		-- Autocompletion
 		{ 'hrsh7th/nvim-cmp' }, -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
