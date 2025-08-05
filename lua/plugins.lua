@@ -60,7 +60,8 @@ else
 		require("plugins.markdown_utils"),
 		require("plugins.multi_cursor"),
 		require("plugins.copilot"),
-		require("plugins.filetree")
+		require("plugins.filetree"),
+		require("plugins.outline"),
 	})
 end
 
