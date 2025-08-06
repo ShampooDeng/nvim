@@ -11,16 +11,19 @@ return {
 			width = 23,
 			min_width = 20
 		},
-		on_attach = function()
-			require('aerial').open({
-				focus = false,
-				direction = 'right',
-			})
-		end,
+		open_automatic = function(bufnr)
+			local aerial = require('aerial')
+			-- Enforce a minimum line count
+			return vim.api.nvim_buf_line_count(bufnr) > 80
+				-- Enforce a minimum symbol count
+				and aerial.num_symbols(bufnr) > 1
+				-- A useful way to keep aerial closed when closed manually
+				and not aerial.was_closed()
+		end
 	},
 	-- Optional dependencies
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-tree/nvim-web-devicons"
-	},
+	}
 }
