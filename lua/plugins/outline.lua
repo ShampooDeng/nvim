@@ -2,7 +2,7 @@ return {
 	'stevearc/aerial.nvim',
 	lazy = false,
 	keys = {
-		{ '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial Outline' },
+		{ '<leader>o', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial Outline while cursor stays in current window' },
 	},
 	opts = {
 		layout = {
@@ -11,15 +11,18 @@ return {
 			width = 23,
 			min_width = 20
 		},
-		open_automatic = function(bufnr)
+		on_attach = function(bufnr)
 			local aerial = require('aerial')
-			-- Enforce a minimum line count
-			return vim.api.nvim_buf_line_count(bufnr) > 80
-				-- Enforce a minimum symbol count
-				and aerial.num_symbols(bufnr) > 1
-				-- A useful way to keep aerial closed when closed manually
+			local auto_open = vim.api.nvim_buf_line_count(bufnr) > 20
+				and aerial.num_symbols(bufnr) > 0
 				and not aerial.was_closed()
-		end
+			-- Override auto-opening behavior
+			if auto_open then
+				aerial.open({
+					focus = false,
+				})
+			end
+		end,
 	},
 	-- Optional dependencies
 	dependencies = {
