@@ -225,8 +225,11 @@ local function setup()
 	vim.keymap.set('n', '<leader>j', function()
 		vim.cmd.Yazi { 'tabe' }
 	end, {})
-	vim.keymap.set('n', '<leader>sl', function()
+	vim.keymap.set('n', '<leader>sh', function()
 		vim.cmd.Yazi { 'left' }
+	end, {})
+	vim.keymap.set('n', '<leader>sl', function()
+		vim.cmd.Yazi { 'right' }
 	end, {})
 end
 
