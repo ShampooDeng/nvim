@@ -44,6 +44,7 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		lazy = false,
 		keys = {
 			{ "]t",         "<cmd>lua require('todo-comments').jump_next()<cr>", desc = "Next todo comment" },
 			{ "[t",         "<cmd>lua require('todo-comments').jump_prev()<cr>", desc = "Previous todo comment" },
