@@ -5,7 +5,7 @@ opt.number = true
 opt.relativenumber = true
 opt.autoindent = true
 opt.ignorecase = true
-opt.smartcase = true"
+opt.smartcase = true
 opt.clipboard:append({ "unnamedplus" })
 
 -- Keymap setup
