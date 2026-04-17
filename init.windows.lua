@@ -43,7 +43,7 @@ vim.opt.rtp:prepend(lazypath)
 local PLUGIN_PROXY = ""
 local plugins = {
   {
-    "ggandor/leap.nvim",
+    "https://codeberg.org/andyg/leap.nvim",
     keys = {"s",'S'},
     config = function()
       vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')

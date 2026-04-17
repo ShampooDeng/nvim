@@ -1,5 +1,5 @@
 return {
-	PLUGIN_PROXY .. "ggandor/leap.nvim",
+	"https://codeberg.org/andyg/leap.nvim",
 	dependencies = "VonHeikemen/lsp-zero.nvim",
 	keys = {"s",'S'},
 	config = function()
